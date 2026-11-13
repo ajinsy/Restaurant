@@ -1,0 +1,29 @@
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <form action="/Ajii/images/cake.jpg" name="myform">
+        Password: <input type="password" name="pa1"><br><br>
+        Reenter Password: <input type="password" name="pa2">
+        <input type="submit" value="login" onclick="return validate()">
+    </form>
+
+    <script>
+        function validate(){
+            var pa1 = document.myform.pa1.value;
+            var pa2 = document.myform.pa2.value;
+
+            if(pa1 != pa2){
+                alert("enter same password")
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script>
+</body>   
+</html>

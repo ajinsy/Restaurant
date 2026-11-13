@@ -1,0 +1,55 @@
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <form action="" name="myform">
+        Name: <input type="text" name="na"><br><br>
+        password: <input type="password" name="pa1"><br><br>
+        Reenter Password: <input type="password" name="pa2">
+        <input type="submit" value="login" onclick="return validateform()">
+    </form>
+
+    <script>
+        function validateform(){
+            var n = document.myform.na.value;
+            var pa1 = document.myform.pa1.value;
+            var pa2 = document.myform.pa2.value;
+            if(n == null || n == ""){
+                alert("fill the name");
+                return false;
+            }
+            else if(pa1.length<4){
+                alert("password must in 5 characters");
+                return false;
+            }
+            if(pa1 != pa2){
+                alert("enter same password")
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+
+    </script>
+
+    
+    <!-- <script>
+        function validate(){
+            var pa1 = document.myform.pa1.value;
+            var pa2 = document.myform.pa2.value;
+
+            if(pa1 != pa2){
+                alert("enter same password")
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+    </script> -->
+</body>
+</html>        

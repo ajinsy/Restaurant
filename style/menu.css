@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    /* 🌟 STEP 1: Add the custom background image to the entire page */
+    background:black;
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px;
+}
+
+
+.menu-wrapper {
+    width: 900px;
+    min-height: 560px;
+
+    /* 🌟 STEP 2: Changed from bright white to a premium translucent dark theme */
+    background:linear-gradient(180deg,rgb(32, 31, 29),white,rgb(42, 49, 42)); 
+    backdrop-filter: blur(8px); /* Subtle modern blur effect */
+
+    
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    border-radius: 14px;
+
+    padding: 30px;
+
+    position: relative;
+}
+
+
+/* HEADER */
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+.menu-header h1 {
+    font-size: 32px;
+    /* 🌟 STEP 3: Accent colors turned to premium gold/warm-white */
+    color: #f3f1ed; 
+    letter-spacing: 1px;
+}
+
+.menu-header a {
+    color: #cccccc;
+    font-size: 13px;
+
+    text-decoration: none;
+
+    border-bottom: 1px solid #c5a059;
+
+    padding-bottom: 4px;
+    transition: color 0.3s;
+}
+
+.menu-header a:hover {
+    color: #e5c07b;
+}
+
+
+/* CONTENT */
+
+.menu-content {
+    display: flex;
+    gap: 40px;
+}
+
+
+/* LEFT CATEGORY */
+
+.categories {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.category {
+    color: #888888;
+
+    font-size: 13px;
+
+    margin-bottom: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.category:hover {
+    color: #e5c07b;
+}
+
+.category.active {
+    color: #e5c07b;
+    font-weight: bold;
+
+    position: relative;
+}
+
+.category.active::before {
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+    height: 1px;
+
+    background: #e5c07b;
+
+    left: -30px;
+    top: 50%;
+}
+
+
+/* LEGEND */
+
+.legend {
+    margin-top: 75px;
+
+    display: flex;
+    gap: 15px;
+
+    font-size: 11px;
+
+    color: #666666;
+}
+
+.legend span {
+    white-space: nowrap;
+}
+
+
+/* FOOD GRID */
+
+.food-grid {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 38px;
+}
+
+
+/* FOOD CARD */
+
+.food-card {
+    height: 220px;
+
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    /* Custom internal cards styling for dark themes */
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+    transition: 0.3s;
+}
+
+.food-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 12px 25px rgba(197, 160, 89, 0.15);
+    border-color: rgba(197, 160, 89, 0.3);
+}
+
+
+/* TOP FOOD INFO */
+
+.food-info {
+    height: 70px;
+
+    padding: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.food-info small {
+    font-size: 9px;
+
+    display: block;
+
+    margin-bottom: 3px;
+    color: #aaaaaa;
+}
+
+.food-info h2 {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+
+/* PRICE */
+
+.price {
+    text-align: right;
+}
+
+.price small {
+    margin-bottom: 5px;
+}
+
+.price strong {
+    display: block;
+
+    font-size: 14px;
+    color: #e5c07b;
+}
+
+
+/* FOOD IMAGE */
+
+.food-card img {
+    width: 100%;
+
+    height: 150px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* DIFFERENT CARD COLORS (Optimized for Dark UI text visibility) */
+
+.pizza .food-info {
+    background: #2a2419;
+}
+
+.salad .food-info {
+    background: #1e2417;
+}
+
+.burger .food-info {
+    background: #2b1f18;
+}
+
+.pancakes .food-info {
+    background: #332615;
+}
+
+.beef .food-info {
+    background: #26201d;
+}
+
+.pasta .food-info {
+    background: #2d2a1b;
+}
+
+
+/* ICON */
+
+.food-icon {
+    position: absolute;
+
+    right: 10px;
+    bottom: 10px;
+
+    width: 28px;
+    height: 28px;
+
+    background: #e5c07b;
+    color: #121212;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .menu-wrapper {
+        width: 100%;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .menu-content {
+        flex-direction: column;
+    }
+
+    .categories {
+        width: 100%;
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 15px;
+    }
+
+    .category {
+        margin-bottom: 0;
+    }
+
+    .category.active::before {
+        display: none;
+    }
+
+    .legend {
+        margin-top: 10px;
+    }
+
+    .food-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-wrapper {
+        padding: 20px;
+    }
+}
+
+/* Responsive refinements */
+.menu-wrapper { width: min(100%, 1100px); }
+.food-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.food-card { min-width: 0; }
+.food-card img { width: 100%; }
+@media (min-width: 651px) and (max-width: 900px) {
+  body { padding: 22px; }
+  .menu-wrapper { padding: 24px; }
+  .menu-content { gap: 24px; }
+  .food-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+}
+@media (max-width: 650px) {
+  body { min-height: 100svh; padding: 12px; align-items: flex-start; }
+  .menu-wrapper { padding: 17px; }
+  .menu-header { gap: 12px; align-items: flex-start; margin-bottom: 22px; }
+  .menu-header h1 { font-size: clamp(23px, 7vw, 29px); }
+  .menu-header a { font-size: 12px; white-space: nowrap; }
+  .menu-content { flex-direction: column; gap: 22px; }
+  .categories { width: 100%; display: flex; flex-wrap: wrap; gap: 10px 14px; }
+  .category { margin: 0; }
+  .category.active::before { display: none; }
+  .legend { margin-top: 2px; flex-wrap: wrap; }
+  .food-grid { grid-template-columns: 1fr; gap: 15px; }
+  .food-card { height: auto; min-height: 215px; }
+  .food-card img { height: 155px; }
+}

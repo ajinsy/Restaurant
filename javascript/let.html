@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+    </head>
+    <body>
+        <script>
+            <!--Block scope-->
+            if (true){
+            let message="hello";
+            console.log (message);
+            }
+            <!--redeclared-->
+            let a=10;
+            console.log (a);             
+            <!--reassigned-->
+            let age=20;
+            console.log(age);
+            age=26;
+            console.log(age);
+        
+        </script>
+    </body>
+</html>
